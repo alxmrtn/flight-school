@@ -15,7 +15,7 @@ class Radar
       http.request(req)
     end
 
-    raise NoSuchAirport
+    raise NoSuchAirport if res.code == "404"
 
     decoded = JSON.parse(res.body)
 
